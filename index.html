@@ -7,26 +7,26 @@
     <style>
         body {
             background-image: url('https://wallpapercave.com/wp/wp8365817.jpg');
-            background-size: cover; /* La imagen cubre toda la pantalla */
-            background-position: center; /* Centra la imagen en la pantalla */
-            background-attachment: fixed; /* La imagen se mantiene fija al hacer scroll */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             font-family: 'Arial', sans-serif;
-            color: white; /* Color del texto blanco para que se vea sobre el fondo */
+            color: white;
             text-align: center;
             margin: 0;
             padding: 0;
-            height: 100vh; /* Asegura que el body tenga el 100% de la altura de la pantalla */
+            height: 100vh;
         }
         h1 {
-            color: white; /* Título en blanco */
+            color: white;
             font-size: 3em;
-            margin-top: 0; /* Sin margen superior */
+            margin-top: 0;
         }
         p {
             font-size: 1.3em;
             margin: 20px;
-            color: white; /* Aseguramos que el texto sea blanco */
-            max-width: 800px; /* Limita el ancho del texto para que no se vea tan largo */
+            color: white;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -37,21 +37,34 @@
             font-size: 1.2em;
             text-decoration: none;
             border-radius: 10px;
-            margin-top: 20px;
+            margin: 10px;
             display: inline-block;
             transition: background-color 0.3s;
+            cursor: pointer;
         }
         .button:hover {
             background-color: #6b3d2b;
         }
-        /* Contenedor centrado horizontalmente en la parte superior */
         .content {
             display: flex;
-            flex-direction: column; /* Los elementos se apilan verticalmente */
-            justify-content: flex-start; /* Alinea los elementos en la parte superior */
-            align-items: center; /* Centra todo horizontalmente */
-            height: 100%; /* Asegura que el contenedor ocupe toda la altura */
-            padding-top: 50px; /* Añade un pequeño espacio en la parte superior */
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            padding-top: 50px;
+        }
+        .message-box {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: yellow;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            max-width: 400px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
@@ -60,11 +73,32 @@
         <h1>¿Quieres ser mi San Valentín?</h1>
         <p>Desde que llegaste a mi vida, todo ha sido tan dulce como un buen chocolate. Este 14 de febrero quiero compartir contigo todo el sabor de mi amor.</p>
         <p>¿Te gustaría ser mi San Valentín y hacer que este día sea aún más especial?</p>
-        <a href="mailto:tu-correo@ejemplo.com" class="button">Sí, acepto ser tu San Valentín</a>
+        <div>
+            <button class="button" onclick="respuesta('si')">¡Sí, acepto ser tu San Valentín!</button>
+            <button class="button" onclick="respuesta('no')">No quiero, españolete</button>
+        </div>
+        <div id="mensaje"></div>
     </div>
+
+    <script>
+        function respuesta(opcion) {
+            var mensaje = document.getElementById('mensaje');
+            mensaje.innerHTML = ""; // Limpiar mensajes anteriores
+
+            var cuadro = document.createElement('div');
+            cuadro.className = 'message-box';
+
+            if (opcion === 'si') {
+                cuadro.innerHTML = "🍫 ¡Excelente elección! Tienes españolete para rato 🍬";
+            } else {
+                cuadro.innerHTML = "🤥 Ups... creo que te va a crecer la nariz como a Pinocho.🤥";
+            }
+
+            mensaje.appendChild(cuadro);
+        }
+    </script>
 </body>
 </html>
-
 
 
 
