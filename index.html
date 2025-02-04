@@ -44,10 +44,13 @@
         .button:hover {
             background-color: #6b3d2b;
         }
-        /* Centrado del contenido, sin usar flex */
+        /* Asegurar que todo esté centrado verticalmente */
         .content {
-            padding-top: 50px; /* Ajusta la distancia desde el borde superior */
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Cambié de 'center' a 'flex-start' para que se ajuste hacia la parte superior */
+            flex-direction: column;
+            height: 100%;
         }
     </style>
 </head>
@@ -60,6 +63,7 @@
     </div>
 </body>
 </html>
+
 
 
 
