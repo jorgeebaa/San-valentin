@@ -15,9 +15,10 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            height: 100vh; /* Asegura que el body tenga el 100% de la altura de la pantalla */
         }
         h1 {
-            color: #8e4b3b;
+            color: white; /* Cambié el color del título a blanco */
             font-size: 3em;
             margin-top: 50px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra en el texto */
@@ -26,6 +27,9 @@
             font-size: 1.3em;
             margin: 20px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra en el texto */
+            max-width: 800px; /* Limita el ancho del texto para que no se vea tan largo */
+            margin-left: auto;
+            margin-right: auto;
         }
         .button {
             background-color: #7a4f33;
@@ -41,12 +45,23 @@
         .button:hover {
             background-color: #6b3d2b;
         }
+        /* Asegurar que todo esté centrado verticalmente */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
-    <h1>¿Quieres ser mi San Valentín?</h1>
-    <p>Desde que llegaste a mi vida, todo ha sido tan dulce como un buen chocolate. Este 14 de febrero quiero compartir contigo todo el sabor de mi amor.</p>
-    <p>¿Te gustaría ser mi San Valentín y hacer que este día sea aún más especial?</p>
-    <a href="mailto:tu-correo@ejemplo.com" class="button">Sí, acepto ser tu San Valentín</a>
+    <div class="content">
+        <h1>¿Quieres ser mi San Valentín?</h1>
+        <p>Desde que llegaste a mi vida, todo ha sido tan dulce como un buen chocolate. Este 14 de febrero quiero compartir contigo todo el sabor de mi amor.</p>
+        <p>¿Te gustaría ser mi San Valentín y hacer que este día sea aún más especial?</p>
+        <a href="mailto:tu-correo@ejemplo.com" class="button">Sí, acepto ser tu San Valentín</a>
+    </div>
 </body>
 </html>
+
